@@ -1,10 +1,9 @@
 import discord
+import os
 import asyncio
 import random
 
 client = discord.Client()
-
-token = "NTQwNzc4NDAzMDMzMzgyOTIy.DzV2xw.MZNDfDqLDLa6DgopA-ksWSS2HtM"
 
 @client.event
 async def on_ready():
@@ -37,5 +36,7 @@ async def on_message(message):
         if ran == 1:
             msg = "당첨"
         await message.channel.send(msg)
+  
+access_token = os.environ["BOT_TOKEN"]
 
-client.run(token)
+client.run(access_token)
